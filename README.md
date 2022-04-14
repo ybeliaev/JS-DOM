@@ -36,3 +36,40 @@
   document.body.dataset.about; // Elephants
 </script>
 ```
+## ✨✨Node manipulation✨✨
+
+```js
+// 1. Create <div> element
+let div = document.createElement('div');
+
+// 2. Set its class to "alert"
+div.className = "alert";
+
+// 3. Fill it with the content
+div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
+
+// 4. Adding an element
+document.body.append(div);
+
+// 5. Removal node
+setTimeout(() => div.remove(), 1000);
+```
+### cloneNode
+>The call `elem.cloneNode(true)` creates a “deep” clone of the element – with all attributes and subelements. 
+>If we call `elem.cloneNode(false)`, then the clone is made without child elements.
+```js
+<body>
+    <div class="alert" id="div">
+    <strong>Hi there!</strong> You've read an important message.
+    </div>
+
+    <script>
+    // clone the message
+    let div2 = div.cloneNode(true);
+     // change the clone 
+    div2.querySelector('strong').innerHTML = 'Bye there!';
+    // show the clone after the existing div
+    div.after(div2); 
+    </script>
+</body>
+```
