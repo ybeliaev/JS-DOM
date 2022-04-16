@@ -88,5 +88,23 @@ setTimeout(() => div.remove(), 1000);
 * `document.body.append(elem);`
 * remove
 * `setTimeout(() => div.remove(), 1500);`
-  
+ ### 💡 `getComputedStyle()` возвращает объект, содержащий значения всех CSS-свойств элемента
+> readonly
+#### exemple:
+ ```js
+<span id="elem">Hello!</span>
+
+<script>
+  alert( getComputedStyle(elem).width ); // auto
+</script>
+ ```
 ## ✨✨Size and scrolling✨✨
+![InnerHTML vs OuterHTML](./src/geometry.png)
+> 
+>`offsetWidth`/`Height` -  full size including borders (`clientLeft`  – left border width, `clientTop`  – top border width) and padding
+
+### scrollWidth/Height
+
+>`element.scrollHeight` - высота контента в элементе, включая содержимое, невидимое из-за прокрутки
+### scrollLeft/scrollTop
+> Свойство `scrollTop` считывает или устанавливает количество пикселей, прокрученных от верха элемента. `scrollTop` измеряет дистанцию от верха элемента до верхней точки видимого контента. Когда контент элемента не создаёт вертикальную прокрутку, его `scrollTop` равно `0`.
