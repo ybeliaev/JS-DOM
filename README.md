@@ -7,7 +7,7 @@
   <script>
     elem.getAttribute('About') // 'Elephant', reading
 
-    elem.setAttribute('Test', 123); // (2), writing
+    elem.setAttribute('Test', 123); // writing
 
     elem.outerHTML;  // <div id="elem" about="Elephant" test="123"></div>
     
@@ -73,3 +73,20 @@ setTimeout(() => div.remove(), 1000);
     </script>
 </body>
 ```
+## ✨✨Node create, styled and classes✨✨
+* createElement
+* `let elem = document.createElement('div');`
+*  className
+* `elem.className = "notification";`   
+* classList   
+* `elem.classList.add(className);`
+* style
+* `elem.style.top = top + 'px';`
+* innerHTML
+* `elem.innerHTML = html;`
+* append
+* `document.body.append(elem);`
+* remove
+* `setTimeout(() => div.remove(), 1500);`
+  
+## ✨✨Size and scrolling✨✨
