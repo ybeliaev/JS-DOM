@@ -140,7 +140,7 @@ console.log(window.pageYOffset)
 
 ## ✨✨Coordinates✨✨
 
-### `elem.getBoundingClientRect()`
+### `elem.getBoundingClientRect()` ( don't forget "px"!)
 > `getBoundingClientRect().left`
 > 
 > `getBoundingClientRect().top`
@@ -148,3 +148,44 @@ console.log(window.pageYOffset)
 > `getBoundingClientRect().width`
 > 
 > `getBoundingClientRect().height`
+* func created html element and location it:
+```js
+let elem = document.getElementById("coords-show-mark");
+
+function createMessageUnder(elem, html) {
+  // create message element
+  let message = document.createElement('div');
+  // better to use a css class for the style here
+  message.style.cssText = "position:fixed; color: red";
+
+  // assign coordinates, don't forget "px"!
+  let coords = elem.getBoundingClientRect();
+
+  message.style.left = coords.left + "px";
+  message.style.top = coords.bottom + "px";
+  
+  message.innerHTML = html;
+
+  return message;
+}
+
+// Usage:
+// add it for 5 seconds in the document
+let message = createMessageUnder(elem, 'Hello, world!');
+document.body.append(message);
+setTimeout(() => message.remove(), 5000);
+
+```
+### 💡 elem.style.cssText
+> interface returns or sets the text of the element's inline style (!!!) declaration only.
+```html
+<span id="s1" style="color: red;">
+  Some text
+</span>
+
+<script>
+  var elem = document.getElementById("s1");
+  elem.style.cssText = "position:fixed; color: blue";
+  alert(elem.style.cssText); // "position:fixed; color: blue""
+</script>
+```
