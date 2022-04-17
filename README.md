@@ -108,3 +108,29 @@ setTimeout(() => div.remove(), 1000);
 >`element.scrollHeight` - высота контента в элементе, включая содержимое, невидимое из-за прокрутки
 ### scrollLeft/scrollTop
 > Свойство `scrollTop` считывает или устанавливает количество пикселей, прокрученных от верха элемента. `scrollTop` измеряет дистанцию от верха элемента до верхней точки видимого контента. Когда контент элемента не создаёт вертикальную прокрутку, его `scrollTop` равно `0`.
+```js
+//Получаем количество прокрученных пикселей
+let intElemScrollTop = someElement.scrollTop;
+// Устанавливаем количество прокрученных пикселей
+element.scrollTop = intValue;
+```
+### Window.pageYOffset
+>`pageYOffset` - свойство окна Window , доступное только для чтения. Это то же свойство, что и `scrollY` (более новое название) и, как таковое, оно тоже возвращает количество пикселей, на которое прокручен документ по вертикали (вниз или вверх).
+* Пример. Навбар получит "sticky" класс когда дойдёт до края
+
+* ![Scroll-1](./src/scroll-1.png)
+
+* ![Scroll-2](./src/scroll-2.png)
+```js
+const navbar = document.getElementById("navbar");
+const sticky = navbar.offsetTop;
+
+function myFunction() {
+console.log(window.pageYOffset)
+  if (window.pageYOffset >= sticky) {
+  navbar.classList.add("sticky")
+  } else {
+  navbar.classList.remove("sticky");
+  }
+}
+```
