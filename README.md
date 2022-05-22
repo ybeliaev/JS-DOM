@@ -200,3 +200,8 @@ window.addEventListener('scroll',function(event){
     oldScroll = window.scrollY;
 });
 ```
+## 💡 `clientX` `pageX` `screenX` `offsetX`
+* ![client-page](./src/client-page.png)
+> РАзница между `clientX` `pageX` что первое св-во учитывает только видимую часть
+>
+>`pageX` расчитывает за скролом ,если тот есть
