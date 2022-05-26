@@ -144,6 +144,9 @@ console.log(window.pageYOffset)
 ## ✨✨Coordinates✨✨
 
 ### `elem.getBoundingClientRect()` ( don't forget "px"!)
+
+* ![client-page](./src/getBoundingClientRect.png)
+
 > `getBoundingClientRect().left`
 > 
 > `getBoundingClientRect().top`
@@ -200,8 +203,21 @@ window.addEventListener('scroll',function(event){
     oldScroll = window.scrollY;
 });
 ```
+------------------------
 ## 💡 `clientX` `pageX` `screenX` `offsetX`
+* Данные по клику:
 * ![client-page](./src/client-page.png)
-> РАзница между `clientX` `pageX` что первое св-во учитывает только видимую часть
+> Разница между `clientX` и `pageX` что первое св-во учитывает только видимую часть
 >
->`pageX` расчитывает за скролом ,если тот есть
+>`pageX` расчитывает за скролом, если тот есть
+```js
+// пример вывода данных по клику
+document.onclick = function(e) { 
+      coords.innerHTML = e.clientX + ':' + e.clientY;
+    };
+```
+```html
+<div id="coords">(координаты покажутся здесь)</div>
+```
+------------------------------------------
+
